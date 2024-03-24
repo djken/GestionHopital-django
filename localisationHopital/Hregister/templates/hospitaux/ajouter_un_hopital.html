@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Ajouter Un Hopital</h1>
+
+    {% if submitted %}
+        Your Information submitted successfully
+
+    {% else %}
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit">
+
+        </form>
+    {% endif %}
+    
+</div>
