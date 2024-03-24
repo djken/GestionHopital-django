@@ -1,0 +1,24 @@
+
+{% comment %} DTL = Django Template Language {% endcomment %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Communauté</th>
+        <th scope="col">Site Web</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for h in hospitals  %}
+      <tr>
+        {% comment %} <th scope="row">1</th> {% endcomment %}
+        <td>{{ h.name }}</td>
+        <td>{{ h.community }}</td>
+        <td>{{ h.web_address }}</td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
