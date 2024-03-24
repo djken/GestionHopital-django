@@ -1,5 +1,5 @@
 
-{% comment %} DTL = Django Template Language {% endcomment %}
+{% comment %} DTL = Dynamic (Django) Template Language {% endcomment %}
 
 <table class="table">
     <thead>
@@ -11,12 +11,12 @@
     </thead>
     <tbody>
 
-    {% for h in hospitals  %}
+    {% for h in hopitaux  %}
       <tr>
         {% comment %} <th scope="row">1</th> {% endcomment %}
-        <td>{{ h.name }}</td>
-        <td>{{ h.community }}</td>
-        <td>{{ h.web_address }}</td>
+        <td>{{ h.nom }}</td>
+        <td>{{ h.communaute }}</td>
+        <td>{{ h.site }}</td>
       </tr>
       {% endfor %}
 

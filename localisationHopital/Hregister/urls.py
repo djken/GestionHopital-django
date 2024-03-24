@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     # http://127.0.0.1:8000/
     path('', views.home),
-    path('liste/', views.afficher)
+    path('afficher_hopitaux/', views.afficher_hopitaux, name='les_hopitaux')
 ]
 
 # DRY
