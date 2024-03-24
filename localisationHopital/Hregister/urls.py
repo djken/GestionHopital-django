@@ -8,6 +8,7 @@ urlpatterns = [
     path('ajouter_hopital/', views.ajouter_hopital, name= 'ajout-hopital'),
     path('modifier_hopital/<int:hopital_id>/', views.modifier_hopital, name='modifier-hopital'),
     path('afficher_un_hopital/<int:hopital_id>/', views.afficher_un_hopital, name='un-hopital'),
+    path('supprimer_un_hopital/<int:hopital_id>/', views.supprimer_un_hopital, name='supprimer-hopital'),
 ]
 
 # DRY

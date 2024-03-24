@@ -43,3 +43,8 @@ def modifier_hopital(request, hopital_id):
 def afficher_un_hopital(request, hopital_id):
     hopital = Hopitaltracker.objects.get(pk=hopital_id)
     return render(request, 'hopitaux/afficher_un_hopital.html', {'hopital': hopital})
+
+def supprimer_un_hopital(request, hopital_id):
+    hopital = Hopitaltracker.objects.get(pk=hopital_id)
+    hopital.delete()
+    return redirect('les-hopitaux')
