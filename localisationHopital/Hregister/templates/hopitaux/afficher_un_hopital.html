@@ -1,0 +1,25 @@
+<div class="container mt-3">
+    <!-- Example row of columns -->
+    <div class="row">        
+        <div class="col-md-4">
+            <h2>{{ hopital.nom }}</h2>
+            <ul>
+                <li>Communauté: {{ hopital.communaute }} </li>
+                <li>adresse: {{ hopital.adresse }} </li>
+                <li>Phone: {{ hopital.telephone }} </li>
+                <li>Courriel: {{ hopital.courriel }} </li>
+                <li>Site: <a href="">{{ hopital.site }}</a></li>
+            </ul>
+          
+            <span class="">
+                <a class="btn btn-outline-secondary btn-sm" href="{% url 'home' %}">Back</a>
+            </span>
+            <span class="">
+                <a class="btn btn-outline-info btn-sm" href="{% url 'modifier-hopital' hopital.id %}">Update</a>
+            </span>
+        </div>
+    </div>
+    
+    <hr>
+
+</div > <!-- /container -->

@@ -39,3 +39,7 @@ def modifier_hopital(request, hopital_id):
         return redirect('home')
    
     return render(request, 'hopitaux/modifier_un_hopital.html', {'hopital':hopital, 'form':form})
+
+def afficher_un_hopital(request, hopital_id):
+    hopital = Hopitaltracker.objects.get(pk=hopital_id)
+    return render(request, 'hopitaux/afficher_un_hopital.html', {'hopital': hopital})
