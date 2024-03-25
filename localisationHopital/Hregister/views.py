@@ -36,7 +36,7 @@ def modifier_hopital(request, hopital_id):
     form = HopitalForm(request.POST or None, instance=hopital)
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('les-hopitaux')
    
     return render(request, 'hopitaux/modifier_un_hopital.html', {'hopital':hopital, 'form':form})
 

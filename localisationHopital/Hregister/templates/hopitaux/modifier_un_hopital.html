@@ -1,5 +1,8 @@
+{% extends "hopitaux/base.html" %}
+
+{% block content %}
 <div class="container">
-    <h1>Modifier les Informations About un Hopital</h1>
+    <div class="display-6 py-4">Modifier les Informations About un Hopital</div>
         <form action="" method="POST">
             {% csrf_token %}
 
@@ -9,3 +12,4 @@
 
         </form>    
 </div> 
+{% endblock content %}

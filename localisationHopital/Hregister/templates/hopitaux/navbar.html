@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Hopitaux HT</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Hopitaux HT</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,7 +15,7 @@
             <a class="nav-link" href="{% url 'les-hopitaux' %}">Hopitaux</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="{% url 'ajout-hopital' %}">Ajout Hopital</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>

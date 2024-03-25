@@ -1,3 +1,6 @@
+{% extends 'hopitaux/base.html' %}
+
+{% block content %}
 <div class="container mt-3">
     <!-- Example row of columns -->
     <div class="row">        
@@ -12,13 +15,13 @@
             </ul>
           
             <span class="">
-                <a class="btn btn-outline-secondary btn-sm" href="{% url 'home' %}">Back</a>
+                <a class="btn btn-outline-secondary btn-sm" href="{% url 'les-hopitaux' %}">Back</a>
             </span>
             <span class="">
                 <a class="btn btn-outline-info btn-sm" href="{% url 'modifier-hopital' hopital.id %}">Update</a>
             </span>
             <span class="">
-                <a class="btn btn-outline-info btn-sm" href="{% url 'supprimer-hopital' hopital.id %}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet hôpital?')">Supprimer</a>
+                <a class="btn btn-outline-danger btn-sm" href="{% url 'supprimer-hopital' hopital.id %}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet hôpital?')">Supprimer</a>
             </span>
         </div>
     </div>
@@ -26,3 +29,4 @@
     <hr>
 
 </div > <!-- /container -->
+{% endblock content %}
