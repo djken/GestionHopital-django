@@ -17,7 +17,7 @@ def afficher_hopitaux(request):
 def ajouter_hopital(request):
     submitted = False
 
-    if request.method == "POST":
+    if request.method == "POST": # HTTP Method
         form = HopitalForm(request.POST)
         if form.is_valid():
             form.save()
