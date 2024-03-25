@@ -7,8 +7,12 @@ urlpatterns = [
     path('afficher_hopitaux/', views.afficher_hopitaux, name='les_hopitaux')
 ]
 
-# DRY
-# URL, View(Vue = Fonction Python), Template (HTML)
+# ***************************************
+# 1) URL, 
+# 2) View(Vue = Fonction Python)
+# 3) Template (HTML)
+#******************************************
+
 
 # Database
 # Model
