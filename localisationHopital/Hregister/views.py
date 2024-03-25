@@ -29,13 +29,15 @@ def ajouter_hopital(request):
 
     return render(request, 'hopitaux/ajouter_un_hopital.html', {'form':form, 'submitted':submitted})
 
+
+
 def modifier_hopital(request, hopital_id):
-    hopital = Hopitaltracker.objects.get(pk=hopital_id)
+    hopital = Hopitaltracker.objects.get(pk=hopital_id) # Chercher l'ID correspondant
     
     # return HttpResponse(hopital)
     form = HopitalForm(request.POST or None, instance=hopital)
     if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('les-hopitaux')
    
     return render(request, 'hopitaux/modifier_un_hopital.html', {'hopital':hopital, 'form':form})
