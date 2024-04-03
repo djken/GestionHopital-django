@@ -25,7 +25,7 @@ class HopitalForm(ModelForm):
             'communaute': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Community'}),
             'adresse': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Address'}),
             'telephone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone Number'}),
-            'site': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Wesite Site'}),
+            'site': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Wesite'}),
             'courriel': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email Address'}),
         }
     

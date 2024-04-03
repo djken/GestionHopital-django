@@ -3,10 +3,11 @@
 {% block content %}
 
 <div class="container">
-  <table class="table table-info table-striped-columns table-hover">
+  <div class="display-6 my-4 text-center">Liste Des Hopitaux</div>
+  <table class="table table-light table-striped-columns table-hover">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <!-- <th scope="col">ID</th> -->
         <th scope="col">Nom</th>
         <th scope="col">Communauté</th>
         <th scope="col">Site Web</th>
@@ -16,10 +17,10 @@
 
     {% for hopital in hopitaux  %}
       <tr>
-        <th scope="row">{{ hopital.id }}</th>
+        <!-- <th scope="row">{{ hopital.id }}</th> -->
         <td> <a href="{% url 'un-hopital' hopital.id %}">{{ hopital.nom }}</a> </td>
         <td>{{ hopital.communaute }}</td>
-        <td>{{ hopital.site }}</td>
+        <td> <a href="">{{ hopital.site }}</a> </td>
       </tr>
       {% endfor %}
 
