@@ -12,4 +12,4 @@ class Hopitaltracker(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'hopitaltracker' 
+        db_table = 'hopitaltracker'
