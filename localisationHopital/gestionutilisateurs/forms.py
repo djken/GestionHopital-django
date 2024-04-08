@@ -9,7 +9,7 @@ class RegisterUserForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
         
     def __init__(self, *args, **kwargs):
         super(RegisterUserForm, self).__init__(*args, **kwargs)
@@ -20,9 +20,35 @@ class RegisterUserForm(UserCreationForm):
             'placeholder': 'First Name'
         })
         
-        self.fields['last_name'].widget.attrs['class']='form-control'
-        self.fields['email'].widget.attrs['class']='form-control'
-        self.fields['username'].widget.attrs['class']='form-control'
-        self.fields['password1'].widget.attrs['class']='form-control'
-        self.fields['password2'].widget.attrs['class']='form-control'
+        self.fields['last_name'].label = ''
+        self.fields['last_name'].widget.attrs.update({
+            'class': 'form-control', 
+            'placeholder': 'Last Name'
+        })
+        
+        self.fields['email'].label = ''
+        self.fields['email'].widget.attrs.update({
+            'class': 'form-control', 
+            'placeholder': 'Email'
+        })
+        
+        self.fields['username'].label = ''
+        self.fields['username'].widget.attrs.update({
+            'class': 'form-control', 
+            'placeholder': 'Username'
+        })
+        
+        self.fields['password1'].label = ''
+        self.fields['password1'].widget.attrs.update({
+            'class': 'form-control', 
+            'placeholder': 'Enter Password'
+        })
+        
+        self.fields['password2'].label = ''
+        self.fields['password2'].widget.attrs.update({
+            'class': 'form-control', 
+            'placeholder': 'Confirmation Password'
+        })
+        
+        # self.fields['password2'].widget.attrs['class']='form-control'
 
