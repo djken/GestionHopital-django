@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.contrib import messages
 
 # Create your views here.
-@csrf_protect
+# @csrf_protect
 def login_user(request):
         if request.method == "POST":
             username = request.POST['username']
@@ -21,7 +21,6 @@ def login_user(request):
         
 def logout_user(request):
     logout(request)
-
     messages.success(request,("You were logout!"))
     return redirect('home')
 

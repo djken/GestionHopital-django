@@ -33,16 +33,20 @@
 
           <!-- DTL -->
           
+          
           {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              <a class="nav-link" href="{% url 'logout' %}">Logout ({{ user }})</a>
             </li>
           {% else %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
           {% endif %}
-          
+            
+         
+
+
         </ul>
         <form class="d-flex">
           <input class="form-control me-sm-2" type="search" placeholder="Search">
