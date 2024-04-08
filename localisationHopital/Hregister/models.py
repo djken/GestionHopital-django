@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User # Import User Model model from Django
 
 # Create your models here.
 class Hopitaltracker(models.Model):
