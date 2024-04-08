@@ -8,6 +8,7 @@
                     {{ hopital.nom }}
                 </div>
 
+                <div class="my-2 lead">Directeure(trice): {{ hopital.user.first_name }} {{ hopital.user.last_name }}</div>
                 <div class="my-2 lead">Communauté: {{ hopital.communaute }}</div>
                 <div class="my-2 lead">Adresse: {{ hopital.adresse }}</div>
                 <div class="my-2 lead">Phone: {{ hopital.telephone }}</div>
@@ -18,8 +19,12 @@
         <div class="d-flex justify-content-center align-content-lg-center pb-5 mb-5">
             <div class="col-md-6 text-center">
                 <a class="btn btn-outline-secondary btn-sm" href="{% url 'les-hopitaux' %}">Back</a>
-                <a class="btn btn-outline-info btn-sm" href="{% url 'modifier-hopital' hopital.id %}">Update</a>
-                <a class="btn btn-outline-danger btn-sm" href="{% url 'supprimer-hopital' hopital.id %}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet hôpital?')">Supprimer</a> 
+
+                {% if user.is_authenticated and user == hopital.user %}
+                    <a class="btn btn-outline-info btn-sm" href="{% url 'modifier-hopital' hopital.id %}">Update</a>
+                    <a class="btn btn-outline-danger btn-sm" href="{% url 'supprimer-hopital' hopital.id %}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet hôpital?')">Supprimer</a> 
+                {% endif %}
+               
             </div>
         </div>
 

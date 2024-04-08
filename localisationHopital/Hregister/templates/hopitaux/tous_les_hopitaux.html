@@ -18,7 +18,7 @@
     {% for hopital in hopitaux  %}
       <tr>
         <!-- <th scope="row">{{ hopital.id }}</th> -->
-        <td> <a href="{% url 'un-hopital' hopital.id %}">{{ hopital.nom }}</a> </td>
+        <td> <a href="{% url 'un-hopital' hopital.id %}">{{ hopital.nom }} </a> </td>
         <td>{{ hopital.communaute }}</td>
         <td> <a href="">{{ hopital.site }}</a> </td>
       </tr>
