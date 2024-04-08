@@ -9,6 +9,7 @@ class Hopitaltracker(models.Model):
     telephone = models.CharField('Telephone', max_length=20)
     site = models.URLField('Site', max_length=150, blank=True, null=True)
     courriel = models.EmailField('Courriel', max_length=150)
+    user = models.ForeignKey(User, related_name='hopitaux', on_delete=models.DO_NOTHING) #
 
     class Meta:
         managed = True

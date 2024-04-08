@@ -16,18 +16,24 @@ def afficher_hopitaux(request):
 @csrf_protect
 def ajouter_hopital(request):
     submitted = False
-
-    if request.method == "POST":
+    
+    if request.user.is_authenticated:
         form = HopitalForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/ajouter_hopital?submitted=True')
-    else:
-        form = HopitalForm()
-        if 'submitted' in request.GET:
-            submitted = True
+        
+        if request.method == "POST":
+            if form.is_valid():
+                hopital = form.save(commit=False)
+                hopital.user = request.user
+                hopital.save()
+                return HttpResponseRedirect('/ajouter_hopital?submitted=True')
+        else:
+            form = HopitalForm()
+            if 'submitted' in request.GET:
+                submitted = True
 
-    return render(request, 'hopitaux/ajouter_un_hopital.html', {'form':form, 'submitted':submitted})
+        return render(request, 'hopitaux/ajouter_un_hopital.html', {'form':form, 'submitted':submitted})
+    else:
+        return redirect('login')
 
 def modifier_hopital(request, hopital_id):
     hopital = Hopitaltracker.objects.get(pk=hopital_id)

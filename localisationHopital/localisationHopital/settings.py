@@ -66,7 +66,7 @@ WSGI_APPLICATION = 'localisationHopital.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hospitaltracker_one',
+        'NAME': 'relation_one_many',
         'USER': 'dev',
         'PASSWORD': 'devDB23@@',
         'HOST': 'localhost',
